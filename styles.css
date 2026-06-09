@@ -4,9 +4,9 @@
   --line: #d9e1e5;
   --paper: #f6f5ef;
   --surface: #ffffff;
-  --teal: #0f766e;
-  --red: #d2473c;
-  --gold: #c58b35;
+  --teal: #19756f;
+  --red: #d63f33;
+  --gold: #b9822d;
 }
 
 * {
@@ -37,7 +37,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  min-height: 72px;
+  min-height: 80px;
   padding: 0 32px;
   background: rgba(246, 245, 239, 0.94);
   border-bottom: 1px solid var(--line);
@@ -47,19 +47,14 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 800;
+  min-width: 82px;
 }
 
-.brand-mark {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  color: #fff;
-  background: var(--teal);
-  border-radius: 8px;
+.brand-logo {
+  display: block;
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
 }
 
 .nav {
@@ -116,13 +111,13 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(12, 18, 22, 0.86), rgba(12, 18, 22, 0.44) 46%, rgba(12, 18, 22, 0.1));
+  background: linear-gradient(90deg, rgba(12, 18, 22, 0.88), rgba(12, 18, 22, 0.48) 48%, rgba(12, 18, 22, 0.14));
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(680px, 100%);
+  width: min(860px, 100%);
   color: #fff;
 }
 
@@ -137,7 +132,7 @@ a {
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(48px, 8vw, 92px);
+  font-size: clamp(40px, 5.2vw, 68px);
   line-height: 1;
   letter-spacing: 0;
 }
@@ -190,6 +185,41 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
   padding-top: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 48px;
+  align-items: start;
+  padding-top: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gallery figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery figcaption {
+  padding: 14px 16px;
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .feature-card {
@@ -310,6 +340,15 @@ a {
     font-size: 14px;
   }
 
+  .brand {
+    min-width: 62px;
+  }
+
+  .brand-logo {
+    width: 52px;
+    height: 52px;
+  }
+
   .hero {
     min-height: 680px;
     padding: 72px 20px 104px;
@@ -323,13 +362,23 @@ a {
     font-size: 17px;
   }
 
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
   .intro,
   .split,
   .info-band,
   .contact,
+  .gallery,
   .feature-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 
   .section {
