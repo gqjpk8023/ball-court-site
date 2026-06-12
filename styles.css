@@ -159,6 +159,7 @@ a {
 
 .intro,
 .split,
+.pairing-section,
 .info-band,
 .contact {
   display: grid;
@@ -269,6 +270,30 @@ a {
   white-space: nowrap;
 }
 
+.pairing-section {
+  align-items: stretch;
+}
+
+.pairing-panel {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.pairing-panel h3 {
+  margin: 0;
+  color: var(--teal);
+  font-size: 24px;
+}
+
+.pairing-panel .primary-button {
+  width: fit-content;
+}
+
 .info-band {
   width: 100%;
   max-width: none;
@@ -369,6 +394,7 @@ a {
 
   .intro,
   .split,
+  .pairing-section,
   .info-band,
   .contact,
   .gallery,
@@ -395,5 +421,9 @@ a {
     align-items: flex-start;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .pairing-panel .primary-button {
+    width: 100%;
   }
 }
